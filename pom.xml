@@ -58,6 +58,9 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <modules>
+        <module>spring-vault-demo</module>
+    </modules>
 
     <build>
         <plugins>
