@@ -1,4 +1,4 @@
-package com.example.springvaultdemo;
+package com.anhtv08.springcloudsleuthdemo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SpringVaultDemoApplicationTests {
+public class SpringCloudSleuthDemoApplicationTests {
 
     @Test
     public void contextLoads() {
