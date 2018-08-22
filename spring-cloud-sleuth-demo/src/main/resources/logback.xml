@@ -8,7 +8,7 @@
                 "serviceName": "%X{serviceName}",
                 "userId": "%X{userId}",
                 "guid": "%X{guid}",
-                "traceId": "%X{X-TRACE-ID}",
+                "traceId": "%X{X-B3-TraceId:-}",
                 "message": "%msg%n",
                 "level": "%-5level"
                 }
