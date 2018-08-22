@@ -10,7 +10,8 @@
                 "guid": "%X{guid}",
                 "traceId": "%X{X-B3-TraceId:-}",
                 "message": "%msg%n",
-                "level": "%-5level"
+                "level": "%-5level",
+                "pid": "${PID:-}"
                 }
             </pattern>
         </encoder>
@@ -20,7 +21,7 @@
     <appender name="kafkaAppender" class="com.github.danielwegener.logback.kafka.KafkaAppender">
         <encoder>
             <pattern>
-                {"timestamp":"%d{HH:mm:ss.SSS}","serviceName":"%X{serviceName}","userId":"%X{userId}","guid":"%X{guid}","traceId":"%X{X-TRACE-ID}","message":"%msg%n","level":"%-5level"}
+                {"timestamp":"%d{HH:mm:ss.SSS}","serviceName":"%X{serviceName}","userId":"%X{userId}","guid":"%X{guid}","traceId":"%X{X-B3-TraceId:-}","pid": "${PID:-}","message":"%msg%n","level":"%-5level"}
                </pattern>
         </encoder>
         <topic>logs</topic>
