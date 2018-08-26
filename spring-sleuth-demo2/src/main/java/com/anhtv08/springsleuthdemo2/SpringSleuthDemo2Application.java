@@ -1,4 +1,4 @@
-package com.anhtv08.springcloudsleuthdemo;
+package com.anhtv08.springsleuthdemo2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,9 +6,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class SpringCloudSleuthDemoApplication {
+public class SpringSleuthDemo2Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringCloudSleuthDemoApplication.class, args);
+        SpringApplication.run(SpringSleuthDemo2Application.class, args);
     }
 }

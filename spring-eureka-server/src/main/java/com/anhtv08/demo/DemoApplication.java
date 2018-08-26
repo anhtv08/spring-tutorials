@@ -1,14 +1,16 @@
-package com.anhtv08.springcloudsleuthdemo;
+package com.anhtv08.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 @SpringBootApplication
+@EnableEurekaServer
 @EnableDiscoveryClient
-public class SpringCloudSleuthDemoApplication {
+public class DemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringCloudSleuthDemoApplication.class, args);
+        SpringApplication.run(DemoApplication.class, args);
     }
 }

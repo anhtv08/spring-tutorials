@@ -21,13 +21,14 @@
     <appender name="kafkaAppender" class="com.github.danielwegener.logback.kafka.KafkaAppender">
         <encoder>
             <pattern>
-                {"timestamp":"%d{HH:mm:ss.SSS}","serviceName":"%X{serviceName}","userId":"%X{userId}","guid":"%X{guid}","traceId":"%X{X-B3-TraceId:-}","pid": "${PID:-}","message":"%msg%n","level":"%-5level"}
-               </pattern>
+                {"timestamp":"%d{HH:mm:ss.SSS}","serviceName":"%X{serviceName}","userId":"%X{userId}","guid":"%X{guid}","traceId":"%X{X-B3-TraceId:-}","pid":
+                "${PID:-}","message":"%msg%n","level":"%-5level"}
+            </pattern>
         </encoder>
         <topic>logs</topic>
-        <keyingStrategy class="com.github.danielwegener.logback.kafka.keying.NoKeyKeyingStrategy" />
+        <keyingStrategy class="com.github.danielwegener.logback.kafka.keying.NoKeyKeyingStrategy"/>
 
-        <deliveryStrategy class="com.github.danielwegener.logback.kafka.delivery.AsynchronousDeliveryStrategy" />
+        <deliveryStrategy class="com.github.danielwegener.logback.kafka.delivery.AsynchronousDeliveryStrategy"/>
 
         <!-- Optional parameter to use a fixed partition -->
         <!-- <partition>0</partition> -->
@@ -45,14 +46,13 @@
         <producerConfig>linger.ms=500</producerConfig>
 
 
-
         <!-- this is the fallback appender if kafka is not available. -->
-        <appender-ref ref="STDOUT" />
+        <appender-ref ref="STDOUT"/>
     </appender>
 
     <root level="INFO">
-        <appender-ref ref="kafkaAppender" />
-        <appender-ref ref="STDOUT" />
+        <appender-ref ref="kafkaAppender"/>
+        <appender-ref ref="STDOUT"/>
 
     </root>
 </configuration>

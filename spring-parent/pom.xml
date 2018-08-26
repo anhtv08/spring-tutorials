@@ -58,10 +58,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <modules>
-        <module>spring-vault-demo</module>
-        <module>spring-cloud-sleuth-demo</module>
-    </modules>
 
     <build>
         <plugins>
@@ -74,7 +70,10 @@
                     <target>${java-version}</target>
                 </configuration>
             </plugin>
-
+	    <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
         </plugins>
     </build>
 
