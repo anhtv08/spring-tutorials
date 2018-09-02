@@ -16,7 +16,7 @@ public class HelloVaultController {
 
     @RequestMapping("/vault/retrieve/{userKey}")
     public String hello(@RequestParam("userKey") String userKey ){
-        VaultResponseSupport<MySecretData> response = vaultTemplate.read("/secret/myapplication/user/" + userKey, MySecretData.class);
+        VaultResponseSupport<MySecretData> response = vaultTemplate.read("secret" , MySecretData.class);
         return  response.getData().getPassword();
 
     }
@@ -24,7 +24,7 @@ public class HelloVaultController {
     public void addUserPasspord(@RequestParam("userKey") String userKey, @RequestParam("password") String password){
 
         MySecretData mySecretData = new MySecretData(userKey, password);
-        vaultTemplate.write("/secret/myapplication/user/" + userKey, mySecretData);
+        vaultTemplate.write("secret" , mySecretData);
 
     }
 }

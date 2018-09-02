@@ -9,6 +9,8 @@ import org.springframework.vault.client.VaultEndpoint;
 import org.springframework.vault.config.AbstractVaultConfiguration;
 import org.springframework.vault.core.VaultTemplate;
 
+import java.net.URI;
+
 @Configuration
 class VaultConfiguration extends AbstractVaultConfiguration {
 
@@ -16,7 +18,7 @@ class VaultConfiguration extends AbstractVaultConfiguration {
     private  String vaultToken;
     @Override
     public VaultEndpoint vaultEndpoint() {
-        return new VaultEndpoint();
+        return  VaultEndpoint.from(URI.create("http://127.0.0.1:8200"));
     }
 
     @Override
