@@ -8,3 +8,4 @@ ENTRYPOINT ["/usr/bin/java", "-jar", "/usr/share/myservice/spring-eureka-server-
 # Add the service itself
 ARG JAR_FILE
 ADD target/${JAR_FILE} /usr/share/myservice/spring-eureka-server-0.0.1-SNAPSHOT.jar
+EXPOSE 8761
