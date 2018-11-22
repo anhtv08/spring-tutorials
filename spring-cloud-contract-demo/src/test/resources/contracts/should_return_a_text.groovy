@@ -20,14 +20,19 @@ Contract.make {
         headers {applicationJson()}
         body("""
 
+[
 {
                 "firstName" : "Joey",
                 "lastName" : "Trang",
-                "age" : 10
+                "age" : 10,
+                 "courses" : {
+                     "courseId": "java-100",
+                     "courseName": "java"
+                 }
 }
+]
+
 """
-
-
         )
 
 

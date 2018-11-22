@@ -3,6 +3,10 @@ package com.example.springcloudcontractdemo.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.Serializable;
+import java.util.Arrays;
+import java.util.List;
+
 @RestController
 public class HelloController {
 
@@ -10,34 +14,12 @@ public class HelloController {
             produces = "application/json"
 
     )
-    public  Person hello(){
-        return new Person("Joey", "Trang", 10);
+    public List<Person> hello(){
+        return Arrays.asList( new Person("Joey", "Trang", 10,
+                new Courses("java-100", "java")));
+//        return new Person("Joey", "Trang", 10);
     }
 
 
 }
 
-class Person{
-
-    private String firstName;
-    private String lastName;
-    private int age;
-
-    public Person(String firstName, String lastName, int age) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-}
