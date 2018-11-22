@@ -17,7 +17,6 @@ public class HelloController {
     public List<Person> hello(){
         return Arrays.asList( new Person("Joey", "Trang", 10,
                 new Courses("java-100", "java")));
-//        return new Person("Joey", "Trang", 10);
     }
 
 
